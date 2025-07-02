@@ -61,7 +61,7 @@ jobs:
             uses: ServiceNow/servicenow-devops-sonar@v5.1.0
             with:
               # ServiceNow Instance URL
-              instance-url: https://sonarcloud.io/
+              instance-url: 
               # Orchestration Tool Id
               tool-id: 1b3a46b8eb6a2e90db94fbefbad0cdc4
               # Github Context
@@ -69,11 +69,63 @@ jobs:
               # Display Name of the Job
               job-name: ServiceNow DevOps Sonar
               # Sonar Host URL
-              sonar-host-url: 
+              sonar-host-url: https://sonarcloud.io/
               # Sonar Project Key
-              sonar-project-key: 
-              # Sonar Organization Key
-              sonar-org-key: # optional
+              sonar-project-key: https://sonarcloud.io/      job3:
+      runs-on: ubuntu-latest
+      steps:
+          - name: job6
+          -  run: echo "Job6"
+    
+      job7:
+        runs-on: ubuntu-latest
+        steps:
+          - name: job7
+          -  run: echo "Job7"
+      job8:
+        runs-on: ubuntu-latest
+        steps:
+          - name: job5
+          -  run: echo "Job8"
+
+          change:
+                      - name: ServiceNow DevOps Change Automation
+  # You may pin to the exact commit or the version.
+  # uses: ServiceNow/servicenow-devops-change@a970f84ddc469bafe6c830da617f32ed1c246096
+  uses: ServiceNow/servicenow-devops-change@v6.0.0
+  with:
+    # ServiceNow Instance URL
+    instance-url: 
+    # Devops Integration User Name
+    devops-integration-user-name: # optional
+    # Devops Integration User Password
+    devops-integration-user-password: # optional
+    # Devops Integration Token
+    devops-integration-token: # optional
+    # Orchestration Tool Id
+    tool-id: 
+    # Display Name of the Job
+    job-name: 
+    # Github Context
+    context-github: 
+    # The max. time in seconds to wait until the action should fail.
+    timeout: # optional, default is 3600
+    # The time in seconds to wait between trying the API.
+    interval: # optional, default is 100
+    # The customized inputs to create change with the requested details. All fields in the Change Request table are supported except risk, impact and risk_impact_analysis.
+    change-request: # optional, default is {}
+    # The max. time in seconds to wait until change created.
+    changeCreationTimeOut: # optional, default is 3600
+    # This value will be used to resume or abort the pipeline if the change is not created within the mentioned time period in changeCreationTimeOut. 
+    abortOnChangeCreationFailure: # optional, default is true
+    # This value will be used to resume or abort the pipeline after a timeout has occurred in case a change step is still in a pending state.
+    abortOnChangeStepTimeout: # optional, default is true
+    # The customized inputs to process deployment gate job related change.
+    deployment-gate: # optional
+          
+          
+          
+
           
         
     
