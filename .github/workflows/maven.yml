@@ -37,26 +37,26 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: job2
-          -  run: echo "Job2"
+          - run: echo "Job2"
       job3:
         needs: job2
         runs-on: ubuntu-latest
         steps:
           - name: job3
-          -  run: echo "Job3"
+          - run: echo "Job3"
     
       job4:
         needs: job3
         runs-on: ubuntu-latest
         steps:
           - name: job4
-          -  run: echo "Job4"
+          - run: echo "Job4"
       job5:
         needs: job4
         runs-on: ubuntu-latest
         steps:
           - name: job5
-          -  run: echo "Job5"
+          - run: echo "Job5"
       sonar:
         needs: job5
         runs-on: ubuntu-latest
@@ -68,8 +68,6 @@ jobs:
               instance-url: https://perfdevops6.service-now.com/
               # Orchestration Tool Id
               tool-id: 1b3a46b8eb6a2e90db94fbefbad0cdc4
-              # Github Context
-              context-github: 
               # Display Name of the Job
               job-name: ServiceNow DevOps Sonar
               # Sonar Host URL
@@ -82,20 +80,20 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: job6
-          -  run: echo "Job6"
+          - run: echo "Job6"
     
       job7:
         needs: job6
         runs-on: ubuntu-latest
         steps:
           - name: job7
-          -  run: echo "Job7"
+          - run: echo "Job7"
       job8:
         needs: job7
         runs-on: ubuntu-latest
         steps:
           - name: job8
-          -  run: echo "Job8"
+          - run: echo "Job8"
 
       change:
         needs: job8
