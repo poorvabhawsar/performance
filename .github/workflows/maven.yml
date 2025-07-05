@@ -70,6 +70,7 @@ jobs:
               sonar-host-url: https://sonarcloud.io/
               # Sonar Project Key
               sonar-project-key: test-org-arnab_test-project
+              context-github: '${{ toJSON(github) }}'
               
       job6:
         needs: sonar
@@ -100,6 +101,7 @@ jobs:
           with:
             # ServiceNow Instance URL
             instance-url: https://perfdevops6.service-now.com/
+            context-github: '${{ toJSON(github) }}'
             # Orchestration Tool Id
             tool-id: 1b3a46b8eb6a2e90db94fbefbad0cdc4
             # Display Name of the Job
@@ -107,7 +109,7 @@ jobs:
             # The max. time in seconds to wait until the action should fail.
             timeout: 3600
             # The customized inputs to create change with the requested details. All fields in the Change Request table are supported except risk, impact and risk_impact_analysis.
-            change-request: "{}"
+            change-request: '{}'
             # The max. time in seconds to wait until change created.
             changeCreationTimeOut: 3600
             # This value will be used to resume or abort the pipeline if the change is not created within the mentioned time period in changeCreationTimeOut. 
